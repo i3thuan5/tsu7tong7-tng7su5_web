@@ -2,7 +2,8 @@ jest.mock('./server');
 
 import configMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import 查 from './index';
+import {查} from './index';
+import {查ajax} from './server';
 
 const middlewares = [thunk];
 const mockStore = configMockStore(middlewares);
@@ -10,10 +11,19 @@ const mockStore = configMockStore(middlewares);
 
 it('要傳 語句 辭典', () => {
   let 語句 = 'sui2';
-  let 辭典 = [];
 
-  查(語句, 辭典);
-  expect(查ajax).toBeCalledWith(語句, 辭典);
+  //查(語句, 辭典);
+  //expect(查ajax).toBeCalledWith(語句, 辭典);
+
+  let fakeStore = mockStore({
+    查: {查詢結果: []},
+    辭典: {辭典表: []}
+  });
+  return fakeStore
+    .dispatch(查(語句))
+    .then(() => {
+      expect(查ajax).toBeCalledWith(語句, []);
+  });
 });
 
 

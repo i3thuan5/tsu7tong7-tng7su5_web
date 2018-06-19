@@ -1,4 +1,5 @@
 import {dispatch} from 'redux';
+import {查ajax} from './server';
 
 const TSHA = 'TSHA';
 
@@ -24,13 +25,14 @@ export const 查失敗 = 錯誤訊息 => ({
 
 
 export const 查 = 語句 => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
 
     dispatch(開始查(語句));
 
-    return 查ajax(語句)
+    let {辭典表} = getState().辭典;
+    return 查ajax(語句, 辭典表)
       .then(
-        data => dispatch(查成功(data.json())),
+        data => dispatch(查成功(data)),
         err => dispatch(查失敗(err))
       );
   };
