@@ -1,9 +1,11 @@
-export const 查ajax = jest.fn(
-  (語句, 辭典) => {
-    console.log('我是mock');
-    return new Promise((resolve, reject) => {
+export const 查ajax = jest.fn((語句, 辭典) =>
+  new Promise((resolve, reject) => {
+    if (語句 == 'sui2') {
       resolve({
-        綜合標音:[{漢字:'媠', 臺羅:'sui2'}]
+        綜合標音:[]
       })
-    });
-});
+    } else {
+      reject('oh no')
+    }
+  })
+);
