@@ -8,7 +8,7 @@ const 初始狀態 = {
 };
 
 export default (state = 初始狀態, action) => {
-  if (action.type == TSHA) {
+  if (action.type === TSHA) {
     switch (action.狀態){
       case 'KHAI_SI':
         return {
