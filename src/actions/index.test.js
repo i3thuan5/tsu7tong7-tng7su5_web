@@ -55,6 +55,6 @@ it('收到錯誤訊息', async () => {
   .then(() => {
     const actions = fakeStore.getActions();
     expect(actions).toContainEqual({type: 'TSHA', 狀態: 'KHAI_SI'});
-    expect(actions).toContainEqual({type: 'TSHA', 狀態: 'SIT_PAI', 錯誤訊息: 'oh no'});
+    expect(actions).toContainEqual({type: 'TSHA', 狀態: 'SIT_PAI', 錯誤: 'oh no'});
   });
 });

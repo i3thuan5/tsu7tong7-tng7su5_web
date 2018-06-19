@@ -1,7 +1,7 @@
 import {dispatch} from 'redux';
 import {查ajax} from './server';
 
-const TSHA = 'TSHA';
+export const TSHA = 'TSHA';
 
 export const 開始查 = 語句 => {
   return ({
@@ -17,10 +17,10 @@ export const 查成功 = 查詢結果 => ({
 });
 
 
-export const 查失敗 = 錯誤訊息 => ({
+export const 查失敗 = 錯誤 => ({
     type: TSHA,
     狀態: 'SIT_PAI',
-    錯誤訊息
+    錯誤
 });
 
 
