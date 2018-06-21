@@ -1,4 +1,3 @@
-import {dispatch} from 'redux';
 import {查ajax} from './server';
 
 export const TSHA = 'TSHA';
