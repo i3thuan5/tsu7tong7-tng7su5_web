@@ -13,7 +13,7 @@ it('要傳 語句 辭典', async () => {
   let 語句 = 'sui2';
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典: {辭典表: []}
+    辭典表: []
   });
 
   await fakeStore
@@ -25,15 +25,14 @@ it('要傳 語句 辭典', async () => {
 
 
 it('收到查詢結果', async () => {
-  let 語句 = 'sui2';
   let 辭典 = [];
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典: {辭典表: []}
+    辭典表: []
   });
 
   await fakeStore
-  .dispatch(查(語句, 辭典))
+  .dispatch(查('sui2'))
   .then(() => {
     const actions = fakeStore.getActions();
     expect(actions).toContainEqual({type: 'TSHA', 狀態: 'KHAI_SI'});
@@ -43,15 +42,14 @@ it('收到查詢結果', async () => {
 
 
 it('收到錯誤訊息', async () => {
-  let 語句 = 'bai2';
   let 辭典 = [];
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典: {辭典表: []}
+    辭典表: []
   });
 
   await fakeStore
-  .dispatch(查(語句, 辭典))
+  .dispatch(查('bai2'))
   .then(() => {
     const actions = fakeStore.getActions();
     expect(actions).toContainEqual({type: 'TSHA', 狀態: 'KHAI_SI'});

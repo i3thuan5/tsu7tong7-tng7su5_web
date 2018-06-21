@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
   buttonStyle: 計算按鈕樣式(state.查.正在查詢)
 })
 
-let TshaPioContainer = ({buttonStyle, dispatch}) => {
+let Tsha = ({buttonStyle, dispatch}) => {
   let input;
 
   return (
@@ -38,6 +38,6 @@ let TshaPioContainer = ({buttonStyle, dispatch}) => {
 )}
 
 
-TshaPioContainer = connect(mapStateToProps)(TshaPioContainer);
+Tsha = connect(mapStateToProps)(Tsha);
 
-export default TshaPioContainer;
+export default Tsha;
