@@ -4,7 +4,7 @@ const 初始狀態 = {
   語句: null,
   正在查: false,
   錯誤: null,
-  查詢結果: {}
+  查詢結果: []
 };
 
 export default (state = 初始狀態, action) => {
