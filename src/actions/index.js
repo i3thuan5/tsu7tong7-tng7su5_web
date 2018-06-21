@@ -2,21 +2,21 @@ import {查ajax} from './server';
 
 export const TSHA = 'TSHA';
 
-export const 開始查 = 語句 => {
+const 開始查 = 語句 => {
   return ({
     type: TSHA,
     狀態: 'KHAI_SI',
   });
 };
 
-export const 查成功 = 查詢結果 => ({
+const 查成功 = 查詢結果 => ({
     type: TSHA,
     狀態: 'SING_KONG',
     查詢結果
 });
 
 
-export const 查失敗 = 錯誤 => ({
+const 查失敗 = 錯誤 => ({
     type: TSHA,
     狀態: 'SIT_PAI',
     錯誤
@@ -31,7 +31,7 @@ export const 查 = 語句 => {
     let {辭典表} = getState();
     return 查ajax(語句, 辭典表)
       .then(
-        data => dispatch(查成功(data)),
+        data => dispatch(查成功(data.綜合標音)),
         err => dispatch(查失敗(err))
       );
   };

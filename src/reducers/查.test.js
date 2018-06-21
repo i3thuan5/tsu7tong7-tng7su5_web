@@ -27,10 +27,10 @@ it('查成功', () => {
   expect(reducer(undefined, {
     type: TSHA,
     狀態: 'SING_KONG',
-    查詢結果: {綜合標音: []}
+    查詢結果: ['HelloWorld']
   })).toEqual({
     ...初始狀態,
-    正在查: false, 錯誤: null, 查詢結果: {綜合標音: []}
+    正在查: false, 錯誤: null, 查詢結果: ['HelloWorld']
   });
 });
 

@@ -36,7 +36,7 @@ it('收到查詢結果', async () => {
   .then(() => {
     const actions = fakeStore.getActions();
     expect(actions).toContainEqual({type: 'TSHA', 狀態: 'KHAI_SI'});
-    expect(actions).toContainEqual({type: 'TSHA', 狀態: 'SING_KONG', 查詢結果:{綜合標音:[]}});
+    expect(actions).toContainEqual({type: 'TSHA', 狀態: 'SING_KONG', 查詢結果:[]});
   });
 });
 
