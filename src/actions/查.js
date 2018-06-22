@@ -1,23 +1,23 @@
 import {查ajax} from './server';
 
-export const TSHA = 'TSHA';
+export const ACTION_TSHA = 'TSHA';
 
 const 開始查 = 語句 => {
   return ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'KHAI_SI',
   });
 };
 
 const 查成功 = 查詢結果 => ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SING_KONG',
     查詢結果
 });
 
 
 const 查失敗 = 錯誤 => ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SIT_PAI',
     錯誤
 });
