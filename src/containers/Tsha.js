@@ -4,11 +4,11 @@ import { Block } from 'demo-ui';
 import { 查 } from '../actions';
 
 
-const 計算按鈕樣式 = 正在查詢 =>
-  `ui huge primary right floated button ${正在查詢 ? "disabled" : ""}`
+const 計算按鈕樣式 = 正在查 =>
+  `ui huge primary right floated button ${正在查 ? "disabled" : ""}`
 
 const mapStateToProps = state => ({
-  buttonStyle: 計算按鈕樣式(state.查.正在查詢)
+  buttonStyle: 計算按鈕樣式(state.查.正在查)
 })
 
 let Tsha = ({buttonStyle, dispatch}) => {

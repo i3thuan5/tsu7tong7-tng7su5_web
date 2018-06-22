@@ -3,7 +3,7 @@ import {Layout, MainSection} from 'demo-ui';
 import IapKha from './components/IapKha';
 import Tsha from './containers/Tsha';
 import HianSiKiatKo from './containers/HianSiKiatKo';
-import HianSiTshoNgoo from './containers/HianSiTshoNgoo';
+import 'semantic-ui-css/components/message.min.css';
 
 
 class App extends React.Component {
@@ -12,7 +12,6 @@ class App extends React.Component {
       <Layout>
         <MainSection>
           <Tsha/>
-          <HianSiTshoNgoo/>
           <HianSiKiatKo/>
         </MainSection>
         <IapKha/>
