@@ -1,21 +1,18 @@
+export const KE_SUTIAN = 'ke'
+export const THAI_SUTIAN = 'thai'
+export const TSHING_SUTIAN = 'tshing'
 
-
-export const ACTION_SUTIAN = 'SUTAIN'
-
-export const keSu = (漢字, 羅馬字) => ({
-    type: ACTION_SUTIAN,
-    狀態: 'KE',
+export const keSuTian = (漢字, 羅馬字) => ({
+    type: KE_SUTIAN,
     漢字,
     羅馬字
   })
 
-export const thaiSu = (id) => ({
-  type: ACTION_SUTIAN,
-  狀態: 'THAI',
+export const thaiSuTian = (id) => ({
+  type: THAI_SUTIAN,
   id
 })
 
 export const tshingSuTian = () => ({
-  type: ACTION_SUTIAN,
-  狀態: 'TSHING'
+  type: TSHING_SUTIAN
 })

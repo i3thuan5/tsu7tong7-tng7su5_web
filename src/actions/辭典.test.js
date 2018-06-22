@@ -1,15 +1,21 @@
 import configureStore from 'redux-mock-store';
-import { ACTION_SUTIAN, keSu, thaiSu, tshingSuTian } from './辭典';
+import {
+  KE_SUTIAN,
+  THAI_SUTIAN,
+  TSHING_SUTIAN,
+  keSuTian,
+  thaiSuTian,
+  tshingSuTian
+} from './辭典';
 
 
 it('加一筆辭典', () => {
   const fakeStore = configureStore()({});
 
-  fakeStore.dispatch(keSu('漢字', '羅馬字'));
+  fakeStore.dispatch(keSuTian('漢字', '羅馬字'));
 
   expect(fakeStore.getActions()).toContainEqual({
-    type: ACTION_SUTIAN,
-    狀態: 'KE',
+    type: KE_SUTIAN,
     漢字: '漢字',
     羅馬字: '羅馬字'
   })
@@ -18,11 +24,10 @@ it('加一筆辭典', () => {
 it('移除該筆辭典', () => {
   const fakeStore = configureStore()({});
 
-  fakeStore.dispatch(thaiSu(0));
+  fakeStore.dispatch(thaiSuTian(0));
 
   expect(fakeStore.getActions()).toContainEqual({
-    type: ACTION_SUTIAN,
-    狀態: 'THAI',
+    type: THAI_SUTIAN,
     id: 0
   });
 });
@@ -33,7 +38,6 @@ it('清除辭典', () => {
   fakeStore.dispatch(tshingSuTian());
 
   expect(fakeStore.getActions()).toContainEqual({
-    type: ACTION_SUTIAN,
-    狀態: 'TSHING'
+    type: TSHING_SUTIAN
   });
 });
