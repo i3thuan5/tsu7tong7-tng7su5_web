@@ -2,7 +2,8 @@ import React from 'react';
 import {Layout, MainSection} from 'demo-ui';
 import IapKha from './components/IapKha';
 import Tsha from './containers/Tsha';
-import HianSiKaitKo from './containers/HianSiKaitKo';
+import HianSiKiatKo from './containers/HianSiKiatKo';
+import HianSiTshoNgoo from './containers/HianSiTshoNgoo';
 
 
 class App extends React.Component {
@@ -11,7 +12,8 @@ class App extends React.Component {
       <Layout>
         <MainSection>
           <Tsha/>
-          <HianSiKaitKo/>
+          <HianSiTshoNgoo/>
+          <HianSiKiatKo/>
         </MainSection>
         <IapKha/>
       </Layout>
