@@ -31,7 +31,7 @@ export const 查 = 語句 => {
     let {辭典表} = getState();
     return 查ajax(語句, 辭典表)
       .then(
-        data => dispatch(查成功(data.綜合標音)),
+        data => dispatch(查成功(data)),
         err => dispatch(查失敗(err))
       );
   };
