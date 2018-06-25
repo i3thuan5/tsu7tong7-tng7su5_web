@@ -9,7 +9,9 @@ import {
 it('初始辭典表狀態', () => {
   expect(
     reducer(undefined, {})
-  ).toEqual({辭典表:[], 錯誤訊息:null});
+  ).toEqual({
+    辭典表:[], 錯誤訊息:null
+  });
 })
 
 
@@ -18,22 +20,11 @@ it('加一詞', () => {
     reducer(
       undefined, {
       type: KE_SUTIAN,
-      漢字: 'A',
-      羅馬字: 'a'
+      新詞: ['A', 'a']
     })
-  ).toEqual({辭典表:[['A', 'a']], 錯誤訊息:null});
-})
-
-
-it('加第二e詞', () => {
-  expect(
-    reducer(
-      [['A', 'a']], {
-      type: KE_SUTIAN,
-      漢字: 'B',
-      羅馬字: 'b'
-    })
-  ).toEqual({辭典表:[['A', 'a'], ['B', 'b']], 錯誤訊息:null});
+  ).toEqual({
+    辭典表:[['A', 'a']], 錯誤訊息: null
+  });
 })
 
 
@@ -42,29 +33,31 @@ it('加一詞只有漢字', () => {
     reducer(
       undefined, {
       type: KE_SUTIAN,
-      漢字: 'A',
-      羅馬字: null
+      新詞: ['A']
     })
-  ).toEqual({辭典表:[['A']], 錯誤訊息:null});
+  ).toEqual({辭典表:[['A']], 錯誤訊息: null});
 })
 
 
-it('原本失敗，這馬成功加一詞', () => {
+it('加一詞清掉進前失敗', () => {
   expect(
     reducer(
-      undefined, {
+      {
+        辭典表:[['A']], 錯誤訊息: '重複了'
+      }, {
       type: KE_SUTIAN,
-      漢字: 'A',
-      羅馬字: null
+      新詞: ['B']
     })
-  ).toEqual({辭典表:[['A']], 錯誤訊息:null});
+  ).toEqual(expect.objectContaining({錯誤訊息:null}));
 })
 
 
 it('移除該筆辭典', () => {
   expect(
     reducer(
-      [['A', 'a'], ['B', 'b']], {
+      {
+        辭典表:[['A', 'a'], ['B', 'b']], 錯誤訊息: null
+      }, {
       type: THAI_SUTIAN,
       id: 0
     })
@@ -75,7 +68,9 @@ it('移除該筆辭典', () => {
 it('清除辭典', () => {
   expect(
     reducer(
-      [['A', 'a']], {
+      {
+        辭典表:[['A', 'a'], ['B', 'b']], 錯誤訊息: null
+      }, {
       type: TSHING_SUTIAN
     })
   ).toEqual({辭典表:[], 錯誤訊息:null});

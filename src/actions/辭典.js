@@ -12,15 +12,12 @@ export const keSuTian = (漢字, 羅馬字) => (dispatch, getState) => {
   if(羅馬字) 新詞.push(羅馬字)
 
   const { 辭典表 } = getState().辭典
-  console.log('辭典表=', 辭典表)
-console.log(新詞)
   let 敢有 = 辭典表.find(function(element) {
     return isEqual(element, 新詞);
   })
-console.log(敢有)
+
   if (敢有) {
     //莫加kang款的詞
-    console.log('in')
     dispatch(顯示錯誤('已有該詞'))
     return
   }
