@@ -9,8 +9,9 @@ import {
 it('初始辭典表狀態', () => {
   expect(
     reducer(undefined, {})
-  ).toEqual([]);
+  ).toEqual({辭典表:[], 錯誤訊息:null});
 })
+
 
 it('加一詞', () => {
   expect(
@@ -20,7 +21,19 @@ it('加一詞', () => {
       漢字: 'A',
       羅馬字: 'a'
     })
-  ).toEqual([['A', 'a']]);
+  ).toEqual({辭典表:[['A', 'a']], 錯誤訊息:null});
+})
+
+
+it('加第二e詞', () => {
+  expect(
+    reducer(
+      [['A', 'a']], {
+      type: KE_SUTIAN,
+      漢字: 'B',
+      羅馬字: 'b'
+    })
+  ).toEqual({辭典表:[['A', 'a'], ['B', 'b']], 錯誤訊息:null});
 })
 
 
@@ -32,8 +45,21 @@ it('加一詞只有漢字', () => {
       漢字: 'A',
       羅馬字: null
     })
-  ).toEqual([['A']]);
+  ).toEqual({辭典表:[['A']], 錯誤訊息:null});
 })
+
+
+it('原本失敗，這馬成功加一詞', () => {
+  expect(
+    reducer(
+      undefined, {
+      type: KE_SUTIAN,
+      漢字: 'A',
+      羅馬字: null
+    })
+  ).toEqual({辭典表:[['A']], 錯誤訊息:null});
+})
+
 
 it('移除該筆辭典', () => {
   expect(
@@ -42,7 +68,7 @@ it('移除該筆辭典', () => {
       type: THAI_SUTIAN,
       id: 0
     })
-  ).toEqual([['B', 'b']]);
+  ).toEqual({辭典表:[['B', 'b']], 錯誤訊息:null});
 })
 
 
@@ -52,5 +78,5 @@ it('清除辭典', () => {
       [['A', 'a']], {
       type: TSHING_SUTIAN
     })
-  ).toEqual([]);
+  ).toEqual({辭典表:[], 錯誤訊息:null});
 })

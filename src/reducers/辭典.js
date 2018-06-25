@@ -2,8 +2,7 @@ import {
   KE_SUTIAN,
   THAI_SUTIAN,
   TSHING_SUTIAN
-} from '../actions/辭典';
-
+} from '../actions/辭典'
 
 const 加詞 = (state, action) => {
   let 新詞 = []
@@ -16,7 +15,7 @@ const THAI詞 = (state, action) =>
   state.filter((ele, index)=> index !== action.id)
 
 
-const SuTianReducer = (prevState=[], action) => {
+const suTianReducer = (prevState=[], action) => {
   switch(action.type){
     case KE_SUTIAN:
       return 加詞(prevState, action)
@@ -30,4 +29,4 @@ const SuTianReducer = (prevState=[], action) => {
 }
 
 
-export default SuTianReducer;
+export default suTianReducer;

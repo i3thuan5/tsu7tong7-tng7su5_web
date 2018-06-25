@@ -2,7 +2,7 @@ jest.mock('./server');
 
 import configMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import {查} from './index';
+import {查} from './查';
 import {查ajax} from './server';
 
 const middlewares = [thunk];
@@ -13,7 +13,7 @@ it('要傳 語句 辭典', async () => {
   let 語句 = 'sui2';
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典表: []
+    辭典: {辭典表: []}
   });
 
   await fakeStore
@@ -28,7 +28,7 @@ it('收到查詢結果', async () => {
   let 辭典 = [];
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典表: []
+    辭典: {辭典表: []}
   });
 
   await fakeStore
@@ -45,7 +45,7 @@ it('收到錯誤訊息', async () => {
   let 辭典 = [];
   let fakeStore = mockStore({
     查: {查詢結果: []},
-    辭典表: []
+    辭典: {辭典表: []}
   });
 
   await fakeStore
