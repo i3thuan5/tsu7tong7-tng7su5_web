@@ -29,10 +29,17 @@ export const 查 = 語句 => {
     dispatch(開始查(語句));
 
     let {辭典表} = getState().辭典;
+
     return 查ajax(語句, 辭典表)
-      .then(
-        data => dispatch(查成功(data)),
-        err => dispatch(查失敗(err))
+      .then(response => {
+          console.log('response', response)
+
+          if(response.ok) {
+            dispatch(查成功(response.json()))
+          } else {
+            dispatch(查失敗(response.status))
+          }
+        }, err => dispatch(查失敗(err))
       );
   };
 }
