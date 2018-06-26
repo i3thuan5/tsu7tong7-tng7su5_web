@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const SuTianPio = ({辭典表, handleThai}) => (
-  <table className="ui celled small compact very basic table">
+  <table className="ui celled small compact stackable very basic table">
     <thead>
       <tr>
         <th className="seven wide"/>
@@ -21,11 +21,11 @@ const SuTianPio = ({辭典表, handleThai}) => (
           <tr key={漢字 + 羅馬字}>
             <td>{漢字}</td>
             <td>{羅馬字}</td>
-            <td><button className="ui red button"
+            <td><button className="ui circular grey icon button"
                 onClick={(e)=>{
                 e.preventDefault()
                 handleThai(id)
-            }}>X</button></td>
+            }}><i className="minus icon"/></button></td>
           </tr>
       )})
     }
