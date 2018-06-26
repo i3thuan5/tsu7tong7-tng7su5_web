@@ -5,7 +5,7 @@ import Tsha from './containers/Tsha';
 import HianSiKiatKo from './containers/HianSiKiatKo';
 import SuTian from './components/SuTian'
 import 'semantic-ui-css/components/message.min.css';
-
+import 'semantic-ui-css/components/table.min.css';
 
 class App extends React.Component {
   render() {

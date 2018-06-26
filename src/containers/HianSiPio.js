@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleRemove: id => {dispatch(thaiSuTian(id))}
+  handleThai: id => {dispatch(thaiSuTian(id))}
 })
 
 const HianSiPio = connect(mapStateToProps, mapDispatchToProps)(SuTianPio)
