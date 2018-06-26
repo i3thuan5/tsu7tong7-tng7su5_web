@@ -15,6 +15,6 @@ it('顯示空結果', () => {
 
 
 it('顯示一結果', () => {
-  const wrapper = shallow(<KiatKo 查詢結果={[{漢字: 'a', 臺羅: 'b'}]}/>);
+  const wrapper = shallow(<KiatKo 查詢結果={[{漢字: 'a', 臺羅斷詞: 'b'}]}/>);
   expect(wrapper.find(HanLoTsua).length).toEqual(1);
 })
