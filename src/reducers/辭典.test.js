@@ -2,7 +2,8 @@ import reducer from './辭典';
 import {
   KE_SUTIAN,
   THAI_SUTIAN,
-  TSHING_SUTIAN
+  TSHING_SUTIAN,
+  ERROR_SUTIAN
 } from '../actions/辭典';
 
 
@@ -36,6 +37,22 @@ it('加一詞只有漢字', () => {
       新詞: ['A']
     })
   ).toEqual({辭典表:[['A']], 錯誤訊息: null});
+})
+
+
+it('發出錯誤時只更動錯誤訊息', () => {
+  expect(
+    reducer(
+      {
+        辭典表:[['A']], 錯誤訊息: null
+      }, {
+      type: ERROR_SUTIAN,
+      錯誤訊息: '重複了'
+    })
+  ).toEqual({
+    辭典表:[['A']],
+    錯誤訊息:'重複了'
+  });
 })
 
 

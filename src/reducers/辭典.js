@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {
   KE_SUTIAN,
   THAI_SUTIAN,
@@ -33,6 +32,8 @@ export const suTianReducer = (prevState=初始狀態, action) => {
       return THAI詞(prevState, action)
     case TSHING_SUTIAN:
       return 初始狀態;
+    case ERROR_SUTIAN:
+      return {...prevState, 錯誤訊息: action.錯誤訊息}
     default:
       return prevState;
   }

@@ -11,7 +11,7 @@ const SuTianPio = ({辭典表}) => (
         let 羅馬字 = 一詞[1] ? 一詞[1] : null
 
         return (
-          <tr key={漢字}>
+          <tr key={漢字 + 羅馬字}>
             <td>{漢字}</td>
             <td>{羅馬字}</td>
           </tr>
