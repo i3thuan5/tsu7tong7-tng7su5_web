@@ -3,8 +3,7 @@ import {Layout, MainSection} from 'demo-ui';
 import IapKha from './components/IapKha';
 import Tsha from './containers/Tsha';
 import HianSiKiatKo from './containers/HianSiKiatKo';
-import KeSinSu from './containers/KeSinSu'
-import HianSiSuTian from './containers/HianSiSuTian'
+import SuTian from './components/SuTian'
 import 'semantic-ui-css/components/message.min.css';
 
 
@@ -16,8 +15,7 @@ class App extends React.Component {
           <Tsha/>
           <HianSiKiatKo/>
 
-          <KeSinSu/>
-          <HianSiSuTian/>
+          <SuTian/>
         </MainSection>
         <IapKha/>
       </Layout>
