@@ -32,12 +32,11 @@ export const 查 = 語句 => {
 
     return 查ajax(語句, 辭典表)
       .then(response => {
-          console.log('response', response)
-
           if(response.ok) {
-            dispatch(查成功(response.json()))
+              let { 多元書寫 } = response.json()
+              dispatch(查成功(多元書寫))
           } else {
-            dispatch(查失敗(response.status))
+              dispatch(查失敗(response.status))
           }
         }, err => dispatch(查失敗(err))
       );

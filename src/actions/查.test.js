@@ -37,7 +37,7 @@ it('收到查詢結果', async () => {
     const actions = fakeStore.getActions();
     expect(actions).toEqual([
       {type: 'TSHA', 狀態: 'KHAI_SI'},
-      {type: 'TSHA', 狀態: 'SING_KONG', 查詢結果:[]}
+      {type: 'TSHA', 狀態: 'SING_KONG', 查詢結果:[{漢字:'sui2'}]}
     ]);
   });
 });
