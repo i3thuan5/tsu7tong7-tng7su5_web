@@ -1,4 +1,17 @@
 language: node_js
 node_js:
-  - "node"
-  - "8"
+- node
+- '8'
+script:
+- npm run test
+- npm run build
+before_deploy: npm run build
+deploy:
+  provider: pages
+  fqdn: xn--hhr625bzsunxh.xn--v0qr21b.xn--kpry57d
+  skip_cleanup: true
+  local_dir: build/
+  github_token:
+    secure: WyMjN/8CyCBFI/y4iApuzeUyj3ew7aMtgTJdphK06EPz4wLBauWuV7Q9+orZbpY3r6qqsRJlMHsyENQa3IegMNNo77vC3OBUWYxwVQpi3Uey5BDD5KZ76RzGuf4dl/Mk0yvTAxcSRme9RGIx1V/DTUYTbo25W51EB7S2YP9C+L+OpDHDJjcFOtCagAo9LrPC3nBTxgBr+sc0cCI4Jwi8PMk+2NnewIdlb08C807npZQjLM8Dvd3KJT7wrdyPv9vmx2EoBmnyzsWQWH3bYytPRpR5vgX5SvwL0dTRvLxcAnVA3qyBvyGA7VlSzlPfTVfig8UQzQJUbQEu8vkHby4r1inCsZR4CFb9LcyQNtAQHeyFrLg6XWGYisKmbfvSGm3uh11ZSm0gF8UOQnFJkpPb/LDl1IRrqYXl+QpU8DvksuM09sAnPqJDF4q0orZs4E6eUVEj+aviB1g6KrbDaCKT1bYIUxFI8Zi8FyjJfkVtrNtRrACyYoQYpVj97tfcewC7sXThSxdj4HzUNKytRIvF5zcUSv1kn/oN/QCcuXRaiQs+BuK0pIjc/z5TmcrJER4ZoRAKu1LHuSUn/kAAb0Oi/AObTxoFXCdsoVxwFS0ey4TvVsdZBwa+aTwPPUyhSlfxs6KBQzz0Q+L2LJzF8i/uXGKQIxjVfo48d3G5RgEMqk0=
+  on:
+    branch: master

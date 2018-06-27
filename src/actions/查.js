@@ -1,23 +1,23 @@
 import {查ajax} from './server';
 
-export const TSHA = 'TSHA';
+export const ACTION_TSHA = 'TSHA';
 
 const 開始查 = 語句 => {
   return ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'KHAI_SI',
   });
 };
 
 const 查成功 = 查詢結果 => ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SING_KONG',
     查詢結果
 });
 
 
 const 查失敗 = 錯誤 => ({
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SIT_PAI',
     錯誤
 });
@@ -28,11 +28,13 @@ export const 查 = 語句 => {
 
     dispatch(開始查(語句));
 
-    let {辭典表} = getState();
+    let {辭典表} = getState().辭典;
+
     return 查ajax(語句, 辭典表)
-      .then(
-        data => dispatch(查成功(data)),
-        err => dispatch(查失敗(err))
-      );
+      .then(response => {
+          let { 多元書寫 } = response.data
+          dispatch(查成功(多元書寫))
+        }, err => dispatch(查失敗(err))
+      )
   };
 }

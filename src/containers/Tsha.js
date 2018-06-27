@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Block } from 'demo-ui';
-import { 查 } from '../actions';
+import { 查 } from '../actions/查';
 
 
 const 計算按鈕樣式 = 正在查 =>

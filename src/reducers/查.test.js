@@ -1,4 +1,4 @@
-import {TSHA} from '../actions';
+import { ACTION_TSHA } from '../actions/查';
 import reducer from './查';
 
 const 初始狀態 = {
@@ -14,7 +14,7 @@ it('初始狀態', () => {
 
 it('開始查', () => {
   expect(reducer(undefined, {
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'KHAI_SI',
   })).toEqual({
     ...初始狀態, 正在查: true, 錯誤: null
@@ -24,7 +24,7 @@ it('開始查', () => {
 
 it('查成功', () => {
   expect(reducer(undefined, {
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SING_KONG',
     查詢結果: ['HelloWorld']
   })).toEqual({
@@ -41,7 +41,7 @@ it('查失敗，但保留舊的結果', () => {
   };
 
   expect(reducer(prevState, {
-    type: TSHA,
+    type: ACTION_TSHA,
     狀態: 'SIT_PAI',
     錯誤: 'Oh no!'
   })).toEqual({

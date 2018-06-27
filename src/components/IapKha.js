@@ -11,6 +11,10 @@ const sites = [
     url: "https://xn--m7rr8i4sil03a3tchtsc3hztv.xn--v0qr21b.xn--kpry57d/",
   },
   {
+    title: "連字符書寫檢查器",
+    url: "https://xn--p8s050ac6bg7zsxy.xn--v0qr21b.xn--kpry57d/",
+  },
+  {
     title: "詞彙分級網站",
     url: "https://xn--kbrr83a6ixbzl.xn--v0qr21b.xn--kpry57d/",
   },

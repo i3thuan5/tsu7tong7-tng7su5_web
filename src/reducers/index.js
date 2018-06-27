@@ -4,5 +4,5 @@ import suTianReducer from './辭典'
 
 export default combineReducers({
   查: tshaReducer,
-  辭典表: suTianReducer
+  辭典: suTianReducer
 })

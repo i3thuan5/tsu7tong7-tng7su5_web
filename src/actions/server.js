@@ -1,9 +1,10 @@
+import axios from 'axios'
 
-export const 查ajax = (語句, 辭典) => (
-  //fetch("https://意傳.台灣/")
-   new Promise((resolve, reject) => {
-     setTimeout(() => {
-      resolve([{漢字:語句, 臺羅:'sui2'},])
-//        reject('失敗')
-     }, 2000)})
-);
+export const 查ajax = (語句, 辭典) => axios.get(
+  "https://服務.意傳.台灣/標漢羅", {
+    params: {
+    查詢腔口: '台語',
+    查詢語句: 語句,
+    使用者辭典: JSON.stringify(辭典)
+  }})
+
