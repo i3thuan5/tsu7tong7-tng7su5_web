@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`顯示一漢羅 1`] = `
+<div
+  className="app block"
+>
+  <div
+    className="app line"
+  >
+    <div
+      className="app text block"
+    >
+      <ruby
+        className="app ruby"
+      >
+        臺羅斷詞
+        <rt>
+          漢字
+        </rt>
+      </ruby>
+    </div>
+    <div>
+      <ruby
+        className="app ruby"
+      >
+        
+        <rt>
+          白話字
+        </rt>
+      </ruby>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`顯示空結果 1`] = `
+<div
+  className="app block"
+/>
+`;

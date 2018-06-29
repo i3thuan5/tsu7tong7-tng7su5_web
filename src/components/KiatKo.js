@@ -1,16 +1,21 @@
-import React from 'react';
-import {Block, HanLoTsua} from 'demo-ui';
-import SinSit from './SinSit';
+import React from 'react'
+import { Block } from 'demo-ui'
+import HianSiKhohLiuA from '../containers/HianSiKhohLiuA'
+import SinSit from './SinSit'
+import Bun from './Bun'
 
-const KiatKo = ({查詢結果, 錯誤訊息}) => (
+
+const KiatKo = ({查詢結果, 錯誤訊息}) => {
+  return (
   <Block>
-    <SinSit 訊息={錯誤訊息}/>
     {
-      查詢結果.map(一句 => (
-        <HanLoTsua key={一句.漢字} 羅馬字={一句.臺羅斷詞} 漢字={一句.漢字} 是否合音={false}/>
-      ))
+      查詢結果 ? <HianSiKhohLiuA/>
+      : null
     }
+    <SinSit 訊息={錯誤訊息}/>
+    <Bun 查詢結果={查詢結果}/>
   </Block>
-);
+  )
+}
 
 export default KiatKo;

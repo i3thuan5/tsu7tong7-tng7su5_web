@@ -19,7 +19,7 @@ const sites = [
     url: "https://xn--kbrr83a6ixbzl.xn--v0qr21b.xn--kpry57d/",
   },
   {
-    title: "台中教育大學台語系",
+    title: "台中教育大學台語系 MIT授權",
     url: "http://taiwanese.ntcu.edu.tw/",
   },];
 

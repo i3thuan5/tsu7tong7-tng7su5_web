@@ -8,6 +8,8 @@ import 'semantic-ui-css/components/message.min.css';
 import 'semantic-ui-css/components/table.min.css';
 import 'semantic-ui-css/components/divider.min.css';
 import 'semantic-ui-css/components/icon.min.css';
+import './App.css'
+
 
 class App extends React.Component {
   render() {
