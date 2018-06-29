@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`空結果無複製鈕仔 1`] = `
+<div
+  className="app ui stackable one large teal buttons"
+/>
+`;
